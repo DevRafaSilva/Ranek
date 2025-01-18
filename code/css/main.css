@@ -1,0 +1,51 @@
+main{
+  font-family: sans-serif;
+}
+
+.titulo{
+  text-align: center;
+  margin-top: 50px;
+  color: #6655DD;
+}
+
+
+.input-container{
+  max-width: 600px;
+  margin: 0 auto;
+}
+.input-container input{
+  padding: 18px 18px;
+  border-radius: 4px;
+  box-shadow: 1px 1px 3px 1px #ccc;
+  border: none;
+  width: 100%;
+  margin: 30px auto;
+}
+.input-container input:focus{
+  scale: 1.1;
+  transition: .7s;
+  outline: none;
+}
+.input-container input:hover{
+  scale: 1.1;
+  outline: none;
+  transition: .7s;
+}
+
+.input-container{
+  display: flex;
+  align-items: center;
+}
+
+.input-container{
+  position: relative;
+}
+
+.input-container img{
+  right: 60px;
+  cursor: pointer;
+  display: block;
+  padding: 10px 10px;
+  background-color: #fff;
+  position: relative;
+}

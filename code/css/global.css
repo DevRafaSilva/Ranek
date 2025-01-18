@@ -1,0 +1,18 @@
+.container{
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.btn-principal{
+  background-color: #6655DD;
+  padding: 12px 26px;
+  text-transform: capitalize;
+  border-radius: 4px;
+  color: #f5f5f7;
+}
+
+body{
+  background-image: url('../../img/pattern.svg');
+  display: block;
+  background-position: right right top;
+}

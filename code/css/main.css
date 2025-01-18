@@ -49,3 +49,38 @@ main{
   background-color: #fff;
   position: relative;
 }
+
+.produtos{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 50px ;
+  padding: 20px 30px;
+  margin-top: 40px;
+}
+
+.produtos img{
+  border-radius: 8px;
+}
+
+.produto-div{
+  box-shadow: 1px 1px 2px 1px #ccc;
+  border-radius: 8px;
+}
+
+.div-item{
+  padding: 12px 22px;
+}
+
+.div-item p:first-child{
+  font-size: 18px;
+  font-weight: bold;
+  color: #EE8800;
+}
+
+.div-item{
+  color: #334455;
+}
+
+.div-item h2{
+  margin: 10px 0;
+}

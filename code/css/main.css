@@ -65,15 +65,16 @@ main{
 .produto-div{
   box-shadow: 1px 1px 2px 1px #ccc;
   border-radius: 8px;
+  padding: 12px;
+  background-color: #fff;
+  cursor: pointer;
 }
 
-.div-item{
-  padding: 12px 22px;
-}
 
 .div-item p:first-child{
   font-size: 18px;
   font-weight: bold;
+  margin-top: 10px;
   color: #EE8800;
 }
 

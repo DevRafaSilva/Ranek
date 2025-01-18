@@ -1,3 +1,4 @@
+import formatarMoeda from './formatarMoeda.js';
 export default class getProdutos {
   constructor(dataProdutoHTML) {
     this.dataProdutoHTML = document.querySelector(dataProdutoHTML);
@@ -19,13 +20,15 @@ export default class getProdutos {
 
   setarProdutosNoHtml(dados) {
     dados.forEach((produtos) => {
+      let moedaFormatada = new formatarMoeda(produtos.preco);
+      moedaFormatada.init();
       const criarDiv = document.createElement('div');
       criarDiv.classList.add('produto-div');
       console.log(produtos);
       criarDiv.innerHTML = `
       <img src="${produtos.fotos[0].src}" title="${produtos.fotos[0].titulo}"/>
       <div class="div-item">
-        <p>${produtos.preco}</p>
+        <p>${moedaFormatada.formatar()}</p>
         <h2>${produtos.nome}</h2>
         <p>${produtos.descricao}</p>
       </div>

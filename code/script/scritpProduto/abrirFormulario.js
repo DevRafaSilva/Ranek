@@ -1,7 +1,9 @@
 export default class formularioAbrir {
-  constructor(dataBtn, dataFormulario) {
+  constructor(dataBtn, dataFormulario, dataBtnCriar, dataFormularioCriar) {
     this.dataBtn = dataBtn;
     this.dataFormulario = dataFormulario;
+    this.dataBtnCriar = document.querySelector(dataBtnCriar);
+    this.dataFormularioCriar = document.querySelector(dataFormularioCriar);
   }
 
   abrirFormulario(event) {
@@ -10,10 +12,10 @@ export default class formularioAbrir {
   }
 
   init() {
-    console.log(this.dataBtn);
-    console.log(this.dataFormulario);
     this.dataBtn.addEventListener('click', (event) => {
       this.abrirFormulario(event);
     });
+
+    console.log(this.dataBtnCriar);
   }
 }

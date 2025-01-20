@@ -33,14 +33,28 @@ export default class getProdutos {
       const criarDiv = document.createElement('div');
       criarDiv.classList.add('produto-div');
       criarDiv.innerHTML = `
-      <img src="${produtos.fotos[0].src}" title="${produtos.fotos[0].titulo}"/>
-      <div class="div-item">
-        <p>${moedaFormatada.formatar()}</p>
-        <h2>${produtos.nome}</h2>
-        <p>${produtos.descricao}</p>
-      </div>
+      <a href="/code/html/produto.html">
+        <img src="${produtos.fotos[0].src}" title="${
+        produtos.fotos[0].titulo
+      }"/>
+        <div class="div-item">
+          <p>${moedaFormatada.formatar()}</p>
+          <h2>${produtos.nome}</h2>
+          <p>${produtos.descricao}</p>
+        </div>
+      </a>
       `;
       this.dataProdutoHTML.appendChild(criarDiv);
+    });
+    this.pegarIdProduto();
+  }
+
+  pegarIdProduto() {
+    let produtoDiv = document.querySelectorAll('.produto-div');
+    produtoDiv.forEach((itemDiv, index) => {
+      itemDiv.addEventListener('click', () => {
+        window.localStorage.setItem('id', this.dados[index].id);
+      });
     });
   }
 
@@ -48,6 +62,7 @@ export default class getProdutos {
     window.addEventListener('keyup', (event) => {
       if (event.key === 'Enter') this.getProdutosFetch();
     });
+
     this.getProdutosFetch();
   }
 }

@@ -4,7 +4,6 @@ export default class pesquisarFecth {
   }
 
   async pesquisar() {
-    console.log(this.dataInputPesquisa.value);
     try {
       const response = await fetch(
         `https://ranekapi.origamid.dev/json/api/produto?q=${this.dataInputPesquisa.value}`,

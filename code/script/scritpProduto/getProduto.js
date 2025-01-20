@@ -55,7 +55,7 @@ export default class getProduto {
       <label for="nome">Nome</label>
       <input id="nome" name="nome" type="text" />
       </div>
-        <div>
+      <div>
         <label for="email">Email</label>
         <input id="email" name="email" type="email" />
         </div>
@@ -92,7 +92,7 @@ export default class getProduto {
         </div>
         </div>
       </div>
-    </div>;
+    </div>
     `;
     let btnFormulario = criarDivConteudo.querySelector('[data-btn-formulario]');
     let formularioContainer =

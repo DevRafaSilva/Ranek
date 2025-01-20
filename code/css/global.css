@@ -4,11 +4,15 @@
 }
 
 .btn-principal{
-  background-color: #6655DD;
+  background-color: #87f;
   padding: 12px 26px;
   text-transform: capitalize;
   border-radius: 4px;
   color: #f5f5f7;
+}
+
+.btn-principal:hover{
+  background-color: #6655DD;
 }
 
 body{
@@ -16,3 +20,12 @@ body{
   display: block;
   background-position: right right top;
   }
+
+input:hover,
+input:focus{
+  outline: 1px solid #6655DD;
+}
+
+button{
+  border: none;
+}

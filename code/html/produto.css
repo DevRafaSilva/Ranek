@@ -12,6 +12,7 @@
 .produto{
   display: grid;
   gap: 30px;
+  grid-template-rows: 800px 800px;
   grid-template-columns: 500px 1fr;
 }
 
@@ -24,32 +25,58 @@
   font-size: 25px !important;
 }
 
-.produto-item{
-  height: calc(100% + 60%);
+.produto-item {
+  position: relative;
+  height: calc(100% + 100%);
 }
 
-.preco-item{
-  top: 10px;
+.container-produto{
   position: sticky;
+  top: 30px;
 }
 
-.titulo-item{
-  
-  top: 48px;
-  position: sticky;
-}
 
 .descricao-item{
-  top: 84px;
-  position: sticky;
-  width: 45ch;
+  width: 35ch;
   font-size: 20px;
+}
+@media(max-width:900px){
+  .descricao-item{
+    width: auto;
+  }
 }
 
 .produto-item a {
   padding: 10px 50px;
   margin-top: 20px;
-  position: sticky;
-  top: 150px;
   display: inline-block;
+}
+
+.formulario{
+  top: 230px;
+  margin-top: 50px;
+}
+
+.formulario div{
+  padding: 20px 40px 0 0;
+  display: grid;
+  grid-template-columns: 60px auto;
+  align-items: center;
+}
+
+.formulario div input{
+  padding: 12px 22px;
+  border: none;
+  display: inline-block;
+  margin: 10px 0;
+  border-radius: 4px;
+  box-shadow: 1px 1px 8px 1px #ccc;
+}
+
+.formulario{
+  display: none;
+}
+
+.formulario.open{
+  display: block;
 }

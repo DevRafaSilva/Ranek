@@ -1,3 +1,4 @@
+import loginAutomatico from './loginAutomatico.js';
 export default class CriarUsuario {
   constructor(
     dataEmail,
@@ -58,11 +59,17 @@ export default class CriarUsuario {
         },
       );
       const dados = await response.json();
+      console.log(dados);
       if (dados.data && dados.data.status === 403) {
         this.dataErro.innerText = dados.message;
         throw new Error(dados.message);
       }
-      console.log(dados);
+      const dadosObj = {
+        username: this.dataEmail.value,
+        password: this.dataSenha.value,
+      };
+      const automaticoLogin = new loginAutomatico(dadosObj);
+      automaticoLogin.init();
     } catch (e) {
       console.log(e);
     } finally {

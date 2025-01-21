@@ -28,9 +28,10 @@ export default class usuarioLogin {
         },
       );
       const dados = await response.json();
+      this.dataError.innerText = dados.message;
       window.localStorage.setItem('token', dados.token);
 
-      if (!!dados && dados.data.status == 403) {
+      if (!dados && dados.data.status == 403) {
         throw new Error(dados.message);
       }
       console.log(dados);

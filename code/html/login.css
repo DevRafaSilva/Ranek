@@ -135,7 +135,7 @@
 }
 
 [data-error],
-[data-error-login]{
+[data-erro-login]{
   grid-column: 2;
   display: block;
   color: #EE8829;

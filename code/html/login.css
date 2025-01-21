@@ -134,7 +134,8 @@
   display: none;
 }
 
-[data-error]{
+[data-error],
+[data-error-login]{
   grid-column: 2;
   display: block;
   color: #EE8829;

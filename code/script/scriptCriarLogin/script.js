@@ -1,5 +1,6 @@
 import abrirFormulario from './abrirFormulario.js';
 import CriarUsuario from './criarUsuario.js';
+import usuarioLogin from './loginUsuario.js';
 
 const abrir = new abrirFormulario(
   '[data-btn-formulario-criar]',
@@ -22,3 +23,12 @@ const criar = new CriarUsuario(
 );
 
 criar.init();
+
+const login = new usuarioLogin(
+  '[data-email-login]',
+  '[data-senha-login]',
+  '[data-btn-login]',
+  '[data-erro-login]',
+);
+
+login.init();

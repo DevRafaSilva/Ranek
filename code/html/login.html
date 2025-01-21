@@ -25,10 +25,11 @@
     <h1 class="titulo">Login</h1>
     <form class="formulario-login" action="POST">
       <label for="email-criar">Email</label>
-      <input type="text" name="email-criar" id="email-criar">
+      <input data-email-login type="text" name="email-criar" id="email-criar">
       <label for="senha-criar">Senha</label>
-      <input type="password" name="senha-criar" id="senha-criar">
-      <button class="btn-principal">Logar</button>
+      <input data-senha-login type="password" name="senha-criar" id="senha-criar">
+      <button data-btn-login class="btn-principal">Logar</button>
+      <span data-erro-login class="error-span"></span>
       <a href="#">Perdeu a senha? clique aqui</a>
     </form>
     <div class="criar-conta">

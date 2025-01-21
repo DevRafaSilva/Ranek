@@ -36,28 +36,26 @@
       <button data-btn-formulario-criar class="btn-principal">Criar conta</button>
       <form data-formulario-criar class="formulario-criar" action="POST">
         <div class="div-container-form">
+          <label for="nome-criar">Nome</label>
+          <input data-nome id="nome-cria" name="nome-criar" type="text" />
           <label for="email-criar">Email</label>
-          <input id="email-cria" name="email-criar" type="email" />
+          <input data-email id="email-cria" name="email-criar" type="email" />
           <label for="senha-criar">Senha</label>
-          <input id="senha-cria" name="senha-criar" type="password" />
+          <input data-senha id="senha-cria" name="senha-criar" type="password" />
           <label for="cep-criar">Cep</label>
-          <input id="cep-criar" name="cep-criar" type="number" />
+          <input data-cep id="cep-criar" name="cep-criar" type="number" />
           <label for="rua-criar">Rua</label>
-          <input id="rua-criar" name="rua-criar" type="text" />
+          <input data-rua id="rua-criar" name="rua-criar" type="text" />
           <label for="numero-criar">Número</label>
-          <input id="numero-criar" name="numero-criar" type="number" />
+          <input data-numero id="numero-criar" name="numero-criar" type="number" />
           <label for="bairro-criar">Número</label>
-          <input id="bairro-criar" name="bairro-criar" type="text" />
+          <input data-bairro id="bairro-criar" name="bairro-criar" type="text" />
           <label for="cidade-criar">Bairro</label>
-          <input id="cidade-criar" name="cidade-criar" type="text" />
-
-
+          <input data-cidade id="cidade-criar" name="cidade-criar" type="text" />
           <label for="estado-criar">Estado</label>
-          <input id="estado-criar" name="estado-criar" type="text" />
-
-          <div class="grid-btn">
-            <button class="">Criar usuário</button>
-          </div>
+          <input data-estado id="estado-criar" name="estado-criar" type="text" />
+          <span data-error class="erro"></span>
+          <button data-btn-criar class="grid-btn">Criar usuário</button>
         </div>
       </form>
     </div>

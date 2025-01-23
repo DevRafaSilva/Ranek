@@ -70,3 +70,10 @@
   margin-top: 20px;
   place-self: start;
 }
+
+.btn-post{
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}

@@ -58,3 +58,15 @@
   color: #334455;
   margin-top: 40px;
 }
+
+.grid-form{
+  display: grid;
+  grid-template-columns: 80px auto;
+  align-items: center;
+}
+
+.grid-form a{
+  grid-column: 2;
+  margin-top: 20px;
+  place-self: start;
+}

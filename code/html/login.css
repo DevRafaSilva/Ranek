@@ -85,8 +85,9 @@
   }
 }
 
-.div-container-form input{
-  padding: 16px 0px;
+.div-container-form input,
+.div-container-form textarea{
+  padding: 16px 0px 16px 20px;
   border: none;
   max-width: 900px;
   width: 100%;

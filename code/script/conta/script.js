@@ -1,4 +1,5 @@
 import PostProduto from './postProduto.js';
+import pegarProdutosUsuario from './pegarProdutosUsuario.js';
 
 const postar = new PostProduto(
   '[data-post-nome]',
@@ -9,3 +10,6 @@ const postar = new PostProduto(
 );
 
 postar.init();
+
+const pegarProdutos = new pegarProdutosUsuario('[data-produtos-usuario]');
+pegarProdutos.init();

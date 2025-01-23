@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conta</title>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="container">
+      <ul>
+        <li>
+          <a class="img-link" href="../index.html">
+            <img src="/img/ranek.svg" alt="Logotipo ranek">
+          </a>
+        <li><a class="btn-principal" href="./login.html">Vender / login</a></li>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class=" container-conta">
+    <ul class="">
+      <nav class="nav-conta">
+        <li><a class="on" href="./conta.html">Produtos</a></li>
+        <li><a href="./compras.html">Compras</a></li>
+        <li><a href="./vendas.html">Vendas</a></li>
+        <li><a href="./editarUsuario.html">Editar Usuário</a></li>
+        <li><a href="#">Deslogar</a></li>
+      </nav>
+    </ul>
+    <div class="formulario-postar container">
+      <h1>Adicionar Produto</h1>
+      <form class="div-container-form" method="post">
+        <label for="nome-produto">Nome</label>
+        <input type="text" name="nome-produto" id="nome-produto">
+        <label for="preco-produto">preço</label>
+        <input type="number" name="preco-produto" id="preco-produto">
+        <label for="fotos-produto">Fotos</label>
+        <input type="file" name="fotos-produto" id="fotos-produto">
+        <label for="descricao-produto">Descrição</label>
+        <textarea name="descricao-produto" id="descricao-produto" cols="30" rows="10"></textarea>
+      </form>
+      <div class="produtos-usuario">
+        <h2 class="">Seus produtos</h2>
+      </div>
+    </div>
+  </main>
+</body>
+
+</html>

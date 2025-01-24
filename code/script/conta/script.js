@@ -1,6 +1,7 @@
 import PostProduto from './postProduto.js';
 import pegarProdutosUsuario from './pegarProdutosUsuario.js';
 import pegarUsuario from './pegarDadosUsuario.js';
+import atualizarUsuario from './atualizarUsuario.js';
 
 const postar = new PostProduto(
   '[data-post-nome]',
@@ -17,3 +18,6 @@ pegarProdutos.init();
 
 const pegarDados = new pegarUsuario('[data-dados]');
 pegarDados.init();
+
+const atualizar = new atualizarUsuario('[data-dados]', '[data-atulaizar-btn]');
+atualizar.init();

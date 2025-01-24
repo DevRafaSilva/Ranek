@@ -5,7 +5,7 @@ export default class pegarProdutosUsuario {
 
   async fetchProdutoUsuari() {
     const response = await fetch(
-      'https://ranekapi.origamid.dev/json/api/produto',
+      'https://ranekapi.origamid.dev/json/api/usuario',
       {
         method: 'GET',
         headers: {

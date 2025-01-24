@@ -1,5 +1,8 @@
 import formatarMoeda from '../formatarMoeda.js';
 import formularioAbrir from './abrirFormulario.js';
+import pegarDadosCompra from './pegarDadosCompra.js';
+import fazerCompra from './fazerCompra.js';
+
 export default class getProduto {
   constructor(dataProdutoItem) {
     this.dataProdutoItem = document.querySelector(dataProdutoItem);
@@ -53,47 +56,48 @@ export default class getProduto {
       <div data-formulario class="formulario">
       <div>
       <label for="nome">Nome</label>
-      <input id="nome" name="nome" type="text" />
+      <input data-dados-compra id="nome" name="nome" type="text" />
       </div>
       <div>
         <label for="email">Email</label>
-        <input id="email" name="email" type="email" />
+        <input data-dados-compra id="email" name="email" type="email" />
         </div>
         <div>
         <label for="senha">Senha</label>
-        <input id="senha" name="senha" type="password" />
+        <input data-dados-compra id="senha" name="senha" type="password" />
         </div>
         <div>
         <label for="cep">Cep</label>
-        <input id="cep" name="cep" type="number" />
+        <input data-endereco data-dados-compra id="cep" name="cep" type="number" />
         </div>
         <div>
         <label for="rua">Rua</label>
-        <input id="rua" name="rua" type="text" />
+        <input data-endereco data-dados-compra id="rua" name="rua" type="text" />
         </div>
         <div>
         <label for="numero">Número</label>
-        <input id="numero" name="numero" type="number" />
+        <input data-endereco data-dados-compra id="numero" name="numero" type="number" />
         </div>
         <div>
-        <label for="bairro">Número</label>
-        <input id="bairro" name="bairro" type="text" />
+        <label for="cidade">cidade</label>
+        <input data-endereco data-dados-compra id="cidade" name="cidade" type="text" />
         </div>
         <div>
         <label for="cidade">Bairro</label>
-        <input id="cidade" name="cidade" type="text" />
+        <input data-endereco data-dados-compra id="bairro" name="bairro" type="text" />
         </div>
         <div>
         <label for="estado">Estado</label>
-        <input id="estado" name="estado" type="text" />
+        <input data-endereco data-dados-compra id="estado" name="estado" type="text" />
         </div>
-        <div>
-        
+        <div class="div-btn-compra">
+          <button data-comprar-btn>Finalizar Compra</button>
         </div>
         </div>
       </div>
     </div>
     `;
+
     let btnFormulario = criarDivConteudo.querySelector('[data-btn-formulario]');
     let formularioContainer =
       criarDivConteudo.querySelector('[data-formulario]');
@@ -101,6 +105,15 @@ export default class getProduto {
     let form = new formularioAbrir(btnFormulario, formularioContainer);
     form.init();
     this.dataProdutoItem.appendChild(criarDivConteudo);
+    const pegarDados = new pegarDadosCompra(
+      '.conteudo-produto [data-dados-compra]',
+    );
+    pegarDados.init();
+    const comprar = new fazerCompra(
+      '.conteudo-produto [data-comprar-btn]',
+      '.conteudo-produto [data-endereco]',
+    );
+    comprar.inti();
   }
 
   init() {

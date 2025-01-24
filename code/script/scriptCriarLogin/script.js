@@ -30,5 +30,4 @@ const login = new usuarioLogin(
   '[data-btn-login]',
   '[data-erro-login]',
 );
-
 login.init();

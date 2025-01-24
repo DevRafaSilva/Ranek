@@ -80,3 +80,13 @@
 .formulario.open{
   display: block;
 }
+
+.conteudo-produto .div-btn-compra button{
+ background-color: #EE8800 !important;
+ grid-column: 2 !important;
+ padding: 10px 18px;
+ font-size: 18px;
+ border-radius: 6px;
+ place-self: start;
+ color: #f5f5f7;
+}

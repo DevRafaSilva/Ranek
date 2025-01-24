@@ -15,7 +15,6 @@ export default class pegarUsuario {
       },
     );
     const dados = await response.json();
-
     this.inputDados[0].value = dados.nome ? dados.nome : '';
     this.inputDados[1].value = dados.email ? dados.email : '';
     this.inputDados[2].value = dados.senha ? dados.senha : '';
@@ -25,7 +24,6 @@ export default class pegarUsuario {
     this.inputDados[6].value = dados.bairro ? dados.bairro : '';
     this.inputDados[7].value = dados.cidade ? dados.cidade : '';
     this.inputDados[8].value = dados.estado ? dados.estado : '';
-    console.log(dados);
   }
 
   init() {

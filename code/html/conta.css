@@ -77,3 +77,37 @@
   text-align: center;
   margin-top: 40px;
 }
+
+.div-imagem-compra {
+  object-fit: contain;
+  width: 250px;
+  object-position: center;
+  height: 130px !important;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.div-imagem-compra img{
+  max-width: 100%;
+  width: 250px;
+}
+
+.div-transacao{
+  display: flex;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+.conteudo-transacao{
+  place-content: end;
+}
+
+.conteudo-transacao p{
+  margin-bottom: 10px;
+}
+
+.p-vendedor{
+  color: #ee8800;
+  font-size: 18px;
+  font-weight: 400px;
+}

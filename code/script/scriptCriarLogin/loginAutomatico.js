@@ -16,6 +16,7 @@ export default class loginAutomatico {
     );
     const dados = await response.json();
     window.localStorage.setItem('token', dados.token);
+    window.localStorage.setItem('user_email', dados.user_email);
     console.log('dadosAutomatioc', dados);
   }
 

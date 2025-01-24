@@ -34,7 +34,7 @@ export default class PostProduto {
   }
 
   init() {
-    this.btnPost.addEventListener('click', (event) => {
+    this.btnPost?.addEventListener('click', (event) => {
       this.pegarDados();
     });
   }

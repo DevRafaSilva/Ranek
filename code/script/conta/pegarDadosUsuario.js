@@ -27,7 +27,7 @@ export default class pegarUsuario {
   }
 
   init() {
-    this.pegarDados();
+    // this.pegarDados();
     console.log(this.inputDados);
   }
 }

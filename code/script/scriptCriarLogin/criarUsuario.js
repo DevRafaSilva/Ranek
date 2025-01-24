@@ -1,4 +1,5 @@
 import loginAutomatico from './loginAutomatico.js';
+import pegerTransacao from '../conta/pegarTransacao.js';
 export default class CriarUsuario {
   constructor(
     dataEmail,
@@ -60,6 +61,8 @@ export default class CriarUsuario {
       );
       const dados = await response.json();
       console.log(dados);
+      window.localStorage.setItem('idusuario', dados.ID);
+
       if (dados.data && dados.data.status === 403) {
         this.dataErro.innerText = dados.message;
         throw new Error(dados.message);

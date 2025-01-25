@@ -7,6 +7,11 @@ export default class rotaProtegida {
       window.location.href.includes('/login')
     ) {
       window.location.href = '/code/html/conta.html';
+    } else if (
+      window.localStorage.getItem('token') == null &&
+      window.location.href.includes('/conta')
+    ) {
+      window.location.href = '/code/html/login.html';
     }
   }
 

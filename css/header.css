@@ -1,0 +1,16 @@
+.header{
+  padding: 15px 30px;
+  box-shadow: 1px 1px 2px 1px #ccc;
+}
+
+.img-link img{
+  width: 100px;
+}
+
+nav ul{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: sans-serif;
+  margin: 10px 0;
+}

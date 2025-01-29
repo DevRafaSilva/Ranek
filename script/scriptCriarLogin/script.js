@@ -1,6 +1,7 @@
 import abrirFormulario from './abrirFormulario.js';
 import CriarUsuario from './criarUsuario.js';
 import usuarioLogin from './loginUsuario.js';
+import RequisicaoCep from './fetchCep.js';
 
 const abrir = new abrirFormulario(
   '[data-btn-formulario-criar]',
@@ -31,3 +32,12 @@ const login = new usuarioLogin(
   '[data-erro-login]',
 );
 login.init();
+
+const cep = new RequisicaoCep(
+  '[data-cep]',
+  '[data-rua]',
+  '[data-bairro]',
+  '[data-cidade]',
+  '[data-estado]',
+);
+cep.init();

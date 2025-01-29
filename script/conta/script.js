@@ -4,6 +4,7 @@ import pegarUsuario from './pegarDadosUsuario.js';
 import atualizarUsuario from './atualizarUsuario.js';
 import pegerTransacao from './pegarTransacao.js';
 import vendasFecth from './vendas.js';
+import logoutConta from './logout.js';
 
 const postar = new PostProduto(
   '[data-post-nome]',
@@ -29,3 +30,6 @@ transacao.init();
 
 const vendas = new vendasFecth('[data-vendas]');
 vendas.init();
+
+const logout = new logoutConta('[data-deslogar]');
+logout.init();

@@ -11,7 +11,7 @@ export default class PostProduto {
     const objDados = {
       nome: this.nome.value,
       preco: this.preco.value,
-      descricao: this.descricao,
+      descricao: this.descricao.value,
       files: this.file.files,
     };
     this.fecthPost(objDados);

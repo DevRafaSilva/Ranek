@@ -39,8 +39,8 @@ export default class vendasFecth {
           <p>Cep: ${item.endereco.cep}</p>
           <p>Rua: ${item.endereco.rua}</p>
           <p>Cidade: ${item.endereco.cidade}</p>
-          <p>Estado: ${item.endereco.estado}</p>
-          <p>Número: ${item.endereco.numero}</p>
+          <p>Estado: ${item.endereco.numero}</p>
+          <p>Número: ${item.endereco.estado}</p>
           <p>Bairro: ${item.endereco.bairro}</p>
         </div>
       `;

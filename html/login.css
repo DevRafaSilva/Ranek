@@ -5,6 +5,7 @@
   padding: 16px 0px;
   box-shadow: 1px 1px 4px 1px #ccc;
   border: none;
+  padding: 16px 0px 16px 20px;
 }
 
 .formulario-login label{

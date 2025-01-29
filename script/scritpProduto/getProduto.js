@@ -44,6 +44,7 @@ export default class getProduto {
     `;
       this.dataProdutoItem.appendChild(criarDiv);
     });
+
     const criarDivConteudo = document.createElement('div');
     criarDivConteudo.classList.add('conteudo-produto');
     criarDivConteudo.innerHTML = `

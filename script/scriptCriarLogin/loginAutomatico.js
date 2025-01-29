@@ -14,10 +14,16 @@ export default class loginAutomatico {
         body: JSON.stringify(this.objUsuario),
       },
     );
+
     const dados = await response.json();
+
     window.localStorage.setItem('token', dados.token);
     window.localStorage.setItem('user_email', dados.user_email);
     console.log('dadosAutomatioc', dados);
+    console.log(dados);
+    if (dados.token) {
+      window.location.href = '/code/html/conta.html';
+    }
   }
 
   init() {

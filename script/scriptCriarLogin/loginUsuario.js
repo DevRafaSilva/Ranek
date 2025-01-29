@@ -31,6 +31,10 @@ export default class usuarioLogin {
       this.dataError.innerText = dados.message;
       window.localStorage.setItem('token', dados.token);
 
+      if (window.localStorage.getItem('token') !== 'undefined') {
+        window.location.href = '/code/html/conta.html';
+      }
+
       if (!dados && dados.data.status == 403) {
         throw new Error(dados.message);
       }

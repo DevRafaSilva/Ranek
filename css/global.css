@@ -3,6 +3,10 @@
   margin: 0 auto !important;
 }
 
+*{
+  box-sizing: border-box;
+}
+
 .btn-principal{
   background-color: #87f;
   padding: 12px 26px;

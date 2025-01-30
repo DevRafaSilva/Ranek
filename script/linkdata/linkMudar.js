@@ -4,14 +4,12 @@ export default class linkMudar {
   }
 
   mudarLink() {
-    this.dataLink.forEach((item) => {
-      if (window.localStorage.getItem('token')) {
-        item.setAttribute('href', '/code/html/conta.html');
-      } else {
-        item.setAttribute('href', '/code/html/login.html');
-        item.innerText = 'Vender / Login';
-      }
-    });
+    if (typeof window.localStorage.getItem('token') === 'undefined') {
+      this.dataLink[0].setAttribute('href', '/code/html/login.html');
+      this.dataLink[0].innerText = 'Vender / Login';
+    } else {
+      this.dataLink[0].setAttribute('href', '/code/html/login.html');
+    }
   }
 
   init() {

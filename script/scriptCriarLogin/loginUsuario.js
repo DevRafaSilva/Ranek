@@ -30,7 +30,7 @@ export default class usuarioLogin {
       const dados = await response.json();
       this.dataError.innerText = dados.message;
       window.localStorage.setItem('token', dados.token);
-
+      window.localStorage.setItem('nome', dados.user_display_name);
       if (window.localStorage.getItem('token') !== 'undefined') {
         window.location.href = '/code/html/conta.html';
       }

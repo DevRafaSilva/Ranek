@@ -1,9 +1,11 @@
 import formatarMoeda from './formatarMoeda.js';
 import pesquisarFecth from './pesquisaFetch.js';
 export default class getProdutos {
-  constructor(dataProdutoHTML) {
+  constructor(dataProdutoHTML, dataPaginacao) {
     this.dataProdutoHTML = document.querySelector(dataProdutoHTML);
+    this.dataPaginacao = document.querySelector(dataPaginacao);
     this.dados = [];
+    this.indexBtnClicado = 0;
   }
 
   async getProdutosFetch() {
@@ -17,17 +19,44 @@ export default class getProdutos {
       this.dados = dados;
 
       this.dados = await pesquisa.pesquisar();
-      this.setarProdutosNoHtml(this.dados);
-      console.log(dados);
-      console.log(dados);
-      console.log(dados);
+      this.paginacao(this.dados);
     } catch (err) {
       console.log(err);
     } finally {
     }
   }
 
+  paginacao(dados) {
+    console.log(dados);
+    this.dataPaginacao.innerHTML = '';
+    const limiteItens = 3;
+    const totalPaginas = Math.ceil(dados.length / limiteItens);
+
+    for (let i = 1; i <= totalPaginas; i++) {
+      const botao = document.createElement('button');
+      botao.innerText = i;
+      this.dataPaginacao.appendChild(botao);
+
+      botao.addEventListener('click', () => {
+        this.indexBtnClicado = i;
+        this.navegar(this.indexBtnClicado, dados, limiteItens);
+      });
+    }
+
+    this.navegar(1, dados, limiteItens);
+  }
+
+  navegar(indexBtn, dados, limiteItens) {
+    let contador = (indexBtn - 1) * limiteItens;
+    let limitador = contador + limiteItens;
+
+    let arrayResultado = dados.slice(contador, limitador);
+
+    this.setarProdutosNoHtml(arrayResultado);
+  }
+
   setarProdutosNoHtml(dados) {
+    console.log(dados);
     this.dataProdutoHTML.innerHTML = '';
     dados.forEach((produtos) => {
       let moedaFormatada = new formatarMoeda(produtos.preco);

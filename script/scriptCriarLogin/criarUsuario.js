@@ -80,7 +80,7 @@ export default class CriarUsuario {
   }
 
   init() {
-    this.dataBtnCriar.addEventListener('click', (event) => {
+    this.dataBtnCriar?.addEventListener('click', (event) => {
       event.preventDefault();
       this.pegarDadosCriar(event);
     });

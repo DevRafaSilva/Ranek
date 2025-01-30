@@ -38,7 +38,8 @@ export default class pegerTransacao {
   }
 
   init() {
-    this.transacaoPegar();
+    if (window.location.href === '/code/html/compras.html')
+      this.transacaoPegar();
     console.log(this.dataDiv);
   }
 }

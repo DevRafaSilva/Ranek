@@ -45,7 +45,7 @@ export default class usuarioLogin {
   }
 
   init() {
-    this.dataBtn.addEventListener('click', (event) => {
+    this.dataBtn?.addEventListener('click', (event) => {
       event.preventDefault();
       this.pegarDados();
     });

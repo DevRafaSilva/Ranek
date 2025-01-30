@@ -10,7 +10,7 @@ export default class abrirFormulario {
   }
 
   init() {
-    this.btnAbrir.addEventListener('click', () => {
+    this.btnAbrir?.addEventListener('click', () => {
       this.abrirFormulario();
     });
   }

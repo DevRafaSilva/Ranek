@@ -49,7 +49,7 @@ export default class vendasFecth {
   }
 
   init() {
-    this.vendasPegar();
+    if (window.location.href === '/code/html/vendas.html') this.vendasPegar();
     console.log(this.dataVenda);
   }
 }

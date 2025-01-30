@@ -16,6 +16,7 @@
   grid-template-columns: 500px 1fr;
 }
 
+
 .conteudo-produto{
   grid-column: 2;
   grid-row: 1;
@@ -24,7 +25,18 @@
 .preco-item{
   font-size: 25px !important;
 }
-
+@media(max-width:800px){
+  .produto{
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+  }
+  .conteudo-produto{
+    grid-column: 1;
+  }
+  .container-produto{
+    position: initial !important;
+  }
+}
 .produto-item {
   position: relative;
   height: calc(100% + 100%);
@@ -58,15 +70,17 @@
 }
 
 .formulario div{
-  padding: 20px 40px 0 0;
+  padding: 20px 0px 0 0;
   display: grid;
   grid-template-columns: 60px auto;
   align-items: center;
+  max-width: 800px;
 }
 
 .formulario div input{
-  padding: 12px 20px;
+  padding: 12px 0 12px 20px;
   border: none;
+  max-width: 100%;
   display: inline-block;
   margin: 10px 0;
   border-radius: 4px;

@@ -9,6 +9,7 @@ export default class linkMudar {
         item.setAttribute('href', '/code/html/conta.html');
       } else {
         item.setAttribute('href', '/code/html/login.html');
+        item.innerText = 'Vender / Login';
       }
     });
   }

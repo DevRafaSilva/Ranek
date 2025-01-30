@@ -12,6 +12,7 @@ main{
 .input-container{
   max-width: 600px;
   margin: 0 auto;
+  padding: 0 0 0 32px;
 }
 .input-container input{
   padding: 18px 18px;
@@ -56,6 +57,17 @@ main{
   gap: 50px ;
   padding: 20px 30px;
   margin-top: 40px;
+}
+
+@media(max-width:850px){
+  .produtos{
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media(max-width:400px){
+  .produtos{
+    grid-template-columns: auto ;
+  }
 }
 
 .produtos img{

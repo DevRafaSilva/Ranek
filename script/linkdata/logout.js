@@ -5,6 +5,7 @@ export default class logout {
 
   fazerLogout() {
     window.localStorage.removeItem('token');
+    window.localStorage.removeItem('nome');
     window.location.href = '/code/html/login.html';
   }
 

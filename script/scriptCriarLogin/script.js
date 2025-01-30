@@ -39,6 +39,5 @@ const cep = new RequisicaoCep(
   '[data-bairro]',
   '[data-cidade]',
   '[data-estado]',
-  '[data-cep-atualiazr]',
 );
 cep.init();

@@ -97,3 +97,30 @@ main{
 .div-item h2{
   margin: 10px 0;
 }
+
+.paginacao{
+  padding: 30px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+[data-paginacao]{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+[data-paginacao] button{
+  padding: 8px 12px;
+  background-color: #c9c9c966;
+}
+
+.paginacao p{
+  padding: 8px 12px;
+  cursor: pointer;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: #6655DD;
+  border-radius: 8px;
+}

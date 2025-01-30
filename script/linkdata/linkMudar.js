@@ -8,7 +8,7 @@ export default class linkMudar {
       this.dataLink[0].setAttribute('href', '/code/html/login.html');
       this.dataLink[0].innerText = 'Vender / Login';
     } else {
-      this.dataLink[0].setAttribute('href', '/code/html/login.html');
+      this.dataLink[0]?.setAttribute('href', '/code/html/login.html');
     }
   }
 

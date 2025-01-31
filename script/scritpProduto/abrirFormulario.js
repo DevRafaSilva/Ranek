@@ -16,6 +16,5 @@ export default class formularioAbrir {
       this.abrirFormulario(event);
     });
 
-    console.log(this.dataBtnCriar);
   }
 }

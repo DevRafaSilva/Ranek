@@ -11,7 +11,6 @@ export default class usuarioLogin {
       username: this.dataEmail.value,
       password: this.dataSenha.value,
     };
-    console.log(objUsuario);
     this.fetchLogin(objUsuario);
   }
 
@@ -38,7 +37,6 @@ export default class usuarioLogin {
       if (!dados && dados.data.status == 403) {
         throw new Error(dados.message);
       }
-      console.log(dados);
     } catch (e) {
       console.log(e);
     }

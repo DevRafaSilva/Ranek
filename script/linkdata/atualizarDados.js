@@ -6,7 +6,6 @@ export default class aAtualizarUsuario {
 
   pegarDados() {
     const dados = this.dados.dataset;
-    console.log(dados);
     const objDados = {};
   }
 
@@ -24,7 +23,6 @@ export default class aAtualizarUsuario {
         },
       );
       const dados = await response.json();
-      console.log(dados);
     } catch (err) {
       console.log(err);
     } finally {

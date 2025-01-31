@@ -17,7 +17,7 @@ export default class pegarProdutosUsuario {
 
     const dados = await response.json();
 
-    console.log(dados);
+  
   }
 
   init() {

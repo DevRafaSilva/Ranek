@@ -28,6 +28,5 @@ export default class pegarDadosCompra {
 
   init() {
     this.pegarDados();
-    console.log(this.inputDados);
   }
 }

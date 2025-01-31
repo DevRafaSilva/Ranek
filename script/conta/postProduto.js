@@ -38,7 +38,6 @@ export default class PostProduto {
       },
     );
     const dados = await response.json();
-    console.log(dados);
   }
 
   init() {

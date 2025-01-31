@@ -1,3 +1,5 @@
+import formatarMoeda from '../formatarMoeda.js';
+
 export default class pegerTransacao {
   constructor(dataDiv) {
     this.dataDiv = document.querySelector(dataDiv);
@@ -19,25 +21,30 @@ export default class pegerTransacao {
   }
 
   botarNaTela(dados) {
+    console.log(dados);
     const divDados = document.createElement('div');
     divDados.classList.add('div-transacao');
     dados.forEach((item) => {
+      const formatar = new formatarMoeda(item.produto.preco);
+      formatar.init();
+      console.log(formatar);
       divDados.innerHTML = `
       <div class="div-imagem-compra">
         <img src="${item.produto.fotos[0].src}" titl="imagem" />
       </div>
       <div class="conteudo-transacao">
-        <p>R$${item.produto.preco}<p>
+        <p>${formatar.formatar()}<p>
         <h2>${item.produto.nome}</h2>
-        <p class=""><span class="p-vendedor">Vendedor:</span>${item.vendedor_id}<p>
+        <p class=""><span class="p-vendedor">Vendedor:</span>${
+          item.vendedor_id
+        }<p>
       </div>
       `;
-      this.dataDiv.appendChild(divDados);
+      this.dataDiv?.appendChild(divDados);
     });
   }
 
   init() {
-    if (window.location.href === '/code/html/compras.html')
-      this.transacaoPegar();
+    this.transacaoPegar();
   }
 }

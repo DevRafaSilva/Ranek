@@ -1,3 +1,4 @@
+import formatarMoeda from '../formatarMoeda.js';
 export default class vendasFecth {
   constructor(dataVenda) {
     this.dataVenda = document.querySelector(dataVenda);
@@ -22,14 +23,18 @@ export default class vendasFecth {
     const divDados = document.createElement('div');
     divDados.classList.add('div-transacao');
     dados.forEach((item) => {
+      const formatar = new formatarMoeda(item.produto.preco);
+      formatar.init();
       divDados.innerHTML = `
       <div class="div-imagem-compra">
         <img src="${item.produto.fotos[0].src}" titl="imagem" />
       </div>
       <div class="conteudo-transacao">
-        <p>R$${item.produto.preco}<p>
+        <p>${formatar.formatar()}<p>
         <h2>${item.produto.nome}</h2>
-        <p class=""><span class="p-vendedor">Vendedor:</span>${item.vendedor_id}<p>
+        <p class=""><span class="p-vendedor">Vendedor:</span>${
+          item.vendedor_id
+        }<p>
         </div>
         <div class="grid-endereco">
         <h3>Entrega</h3>
@@ -48,6 +53,7 @@ export default class vendasFecth {
   }
 
   init() {
-    if (window.location.href === '/code/html/vendas.html') this.vendasPegar();
+    if (window.location.pathname === '/code/html/vendas.html')
+      this.vendasPegar();
   }
 }

@@ -13,7 +13,6 @@ export default class RequisicaoCep {
         `https://viacep.com.br/ws/${this.cep[0].value}/json`,
       );
       const dados = await response.json();
-      console.log(dados);
       this.bairro[0].value = dados.bairro;
       this.cidade[0].value = dados.localidade;
       this.rua[0].value = dados.logradouro;

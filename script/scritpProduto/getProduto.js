@@ -18,8 +18,7 @@ export default class getProduto {
         )}`,
       );
       const dados = await response.json();
-      console.log(dados);
-      this.dadosItem = dados;
+        this.dadosItem = dados;
       this.colocarNaTelaProduto();
     } catch (err) {
       console.log(err);
@@ -28,7 +27,6 @@ export default class getProduto {
   }
 
   colocarNaTelaProduto() {
-    console.log(this.dadosItem);
 
     let moedaFormatada = new formatarMoeda(this.dadosItem.preco);
     moedaFormatada.init();
@@ -36,7 +34,7 @@ export default class getProduto {
     this.dadosItem.fotos?.forEach((img) => {
       const criarDiv = document.createElement('div');
       criarDiv.classList.add('grid-produto');
-      console.log(img.src);
+  
       criarDiv.innerHTML = ` 
       <div>
         <img src="${img.src}" title="${img.title}" />

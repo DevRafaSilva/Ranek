@@ -9,7 +9,6 @@ export default class pesquisarFecth {
         `https://ranekapi.origamid.dev/json/api/produto?q=${this.dataInputPesquisa.value}`,
       );
       const dados = await response.json();
-      console.log(dados);
 
       return dados;
     } catch (err) {

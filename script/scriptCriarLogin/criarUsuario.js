@@ -41,8 +41,6 @@ export default class CriarUsuario {
       estado: this.dataEstado.value,
       nome: this.dataNome.value,
     };
-    console.log(objetoDadosCriar);
-
     this.fetchCriar(objetoDadosCriar, event);
   }
 
@@ -60,7 +58,6 @@ export default class CriarUsuario {
         },
       );
       const dados = await response.json();
-      console.log(dados);
       window.localStorage.setItem('idusuario', dados.ID);
 
       if (dados.data && dados.data.status === 403) {

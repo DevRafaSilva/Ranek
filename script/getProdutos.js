@@ -31,7 +31,6 @@ export default class getProdutos {
   }
 
   paginacao(dados) {
-    console.log(dados);
     this.dataPaginacao.innerHTML = '';
     this.limiteItens = 3;
     const totalPaginas = Math.ceil(dados.length / this.limiteItens);
@@ -66,7 +65,6 @@ export default class getProdutos {
   navegacaoAnterior() {
     if (this.indexBtnClicado > 1) {
       this.indexBtnClicado--;
-      console.log(this.indexBtnClicado);
       this.navegar(this.indexBtnClicado, this.dados, this.limiteItens);
       this.adicionarClassePaginacao(this.btnPaginacao);
     }
@@ -100,7 +98,7 @@ export default class getProdutos {
   }
 
   setarProdutosNoHtml(dados) {
-    console.log(dados);
+
     this.dataProdutoHTML.innerHTML = '';
     dados.forEach((produtos) => {
       let moedaFormatada = new formatarMoeda(produtos.preco);

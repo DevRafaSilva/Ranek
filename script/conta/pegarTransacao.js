@@ -15,7 +15,6 @@ export default class pegerTransacao {
       },
     );
     const dados = await response.json();
-    console.log(dados);
     this.botarNaTela(dados);
   }
 
@@ -40,6 +39,5 @@ export default class pegerTransacao {
   init() {
     if (window.location.href === '/code/html/compras.html')
       this.transacaoPegar();
-    console.log(this.dataDiv);
   }
 }

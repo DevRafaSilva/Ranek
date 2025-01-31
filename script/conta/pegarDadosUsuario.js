@@ -34,6 +34,6 @@ export default class pegarUsuario {
   init() {
     if (window.location.href === '/code/html/editarUsuario.html')
       this.pegarDados();
-    console.log(this.inputDados);
+
   }
 }

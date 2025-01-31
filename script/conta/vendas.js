@@ -15,7 +15,6 @@ export default class vendasFecth {
       },
     );
     const dados = await response.json();
-    console.log(dados);
     this.botarNaTela(dados);
   }
 
@@ -50,6 +49,5 @@ export default class vendasFecth {
 
   init() {
     if (window.location.href === '/code/html/vendas.html') this.vendasPegar();
-    console.log(this.dataVenda);
   }
 }

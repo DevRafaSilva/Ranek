@@ -18,7 +18,7 @@ export default class atualizarUsuario {
       cidade: cidade.value,
       estado: estado.value,
     };
-    console.log(objDados);
+
     this.atualizar(objDados);
   }
 
@@ -35,7 +35,6 @@ export default class atualizarUsuario {
       },
     );
     const dados = await response.json();
-    console.log(dados);
   }
 
   init() {

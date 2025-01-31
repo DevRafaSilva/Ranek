@@ -12,7 +12,7 @@ export default class fazerCompra {
         )}`,
       );
       const dados = await response.json();
-      console.log(dados);
+
       const [cep, rua, estado, cidade, bairro, numero] = this.endereco;
       const enderecoObj = {
         cep: cep.value,
@@ -45,7 +45,6 @@ export default class fazerCompra {
   }
 
   async comprar(objDados) {
-    console.log(objDados);
     const response = await fetch(
       'https://ranekapi.origamid.dev/json/api/transacao',
       {
@@ -58,7 +57,6 @@ export default class fazerCompra {
       },
     );
     const dados = await response.json();
-    console.log(dados);
   }
 
   inti() {

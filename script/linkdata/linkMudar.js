@@ -14,6 +14,5 @@ export default class linkMudar {
 
   init() {
     this.mudarLink();
-    console.log(this.dataLink);
   }
 }

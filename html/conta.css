@@ -22,7 +22,7 @@
 }
 
 .formulario-postar{
-  padding: 40px 30px;
+  padding: 40px 30px 0 0;
   color: #334455;
 }
 .formulario-postar textarea{
@@ -104,6 +104,12 @@
   grid-template-columns: auto 1fr;
   gap: 10px;
   margin-top: 40px;
+}
+
+@media(max-width:600px){
+  .div-transacao{
+    grid-template-columns: auto;
+  }
 }
 
 .conteudo-transacao{

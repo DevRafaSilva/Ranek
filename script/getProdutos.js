@@ -1,11 +1,15 @@
 import formatarMoeda from './formatarMoeda.js';
 import pesquisarFecth from './pesquisaFetch.js';
 export default class getProdutos {
-  constructor(dataProdutoHTML, dataPaginacao) {
+  constructor(dataProdutoHTML, dataPaginacao, anterior, proximo) {
     this.dataProdutoHTML = document.querySelector(dataProdutoHTML);
     this.dataPaginacao = document.querySelector(dataPaginacao);
+    this.anterior = document.querySelector(anterior);
+    this.proximo = document.querySelector(proximo);
     this.dados = [];
-    this.indexBtnClicado = 0;
+    this.indexBtnClicado = 1;
+    this.limiteItens = 0;
+    this.btnPaginacao = null;
   }
 
   async getProdutosFetch() {
@@ -29,8 +33,8 @@ export default class getProdutos {
   paginacao(dados) {
     console.log(dados);
     this.dataPaginacao.innerHTML = '';
-    const limiteItens = 3;
-    const totalPaginas = Math.ceil(dados.length / limiteItens);
+    this.limiteItens = 3;
+    const totalPaginas = Math.ceil(dados.length / this.limiteItens);
 
     for (let i = 1; i <= totalPaginas; i++) {
       const botao = document.createElement('button');
@@ -39,11 +43,51 @@ export default class getProdutos {
 
       botao.addEventListener('click', () => {
         this.indexBtnClicado = i;
-        this.navegar(this.indexBtnClicado, dados, limiteItens);
+        this.navegar(this.indexBtnClicado, this.dados, this.limiteItens);
+      });
+
+      const btn = this.dataPaginacao.querySelectorAll('button');
+      this.btnPaginacao = btn;
+      btn[0].classList.add('on');
+      btn.forEach((item) => {
+        item.addEventListener('click', () => {
+          item.classList.remove('on');
+          btn.forEach((item) => {
+            item.classList.remove('on');
+          });
+          item.classList.add('on');
+        });
       });
     }
 
-    this.navegar(1, dados, limiteItens);
+    this.navegar(1, this.dados, this.limiteItens);
+  }
+
+  navegacaoAnterior() {
+    if (this.indexBtnClicado > 1) {
+      this.indexBtnClicado--;
+      console.log(this.indexBtnClicado);
+      this.navegar(this.indexBtnClicado, this.dados, this.limiteItens);
+      this.adicionarClassePaginacao(this.btnPaginacao);
+    }
+  }
+  navegacaoProximo() {
+    const totalPagina = Math.ceil(this.dados.length / this.limiteItens);
+    if (this.indexBtnClicado < totalPagina) {
+      this.indexBtnClicado++;
+      this.navegar(this.indexBtnClicado, this.dados, this.limiteItens);
+      this.adicionarClassePaginacao(this.btnPaginacao);
+    }
+  }
+
+  adicionarClassePaginacao(botao) {
+    botao?.forEach((btnItem) => {
+      if (+btnItem.innerText == this.indexBtnClicado) {
+        btnItem.classList.add('on');
+      } else {
+        btnItem.classList.remove('on');
+      }
+    });
   }
 
   navegar(indexBtn, dados, limiteItens) {
@@ -97,5 +141,11 @@ export default class getProdutos {
       }
     });
     this.getProdutosFetch();
+    this.anterior.addEventListener('click', () => {
+      this.navegacaoAnterior();
+    });
+    this.proximo.addEventListener('click', () => {
+      this.navegacaoProximo();
+    });
   }
 }

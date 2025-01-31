@@ -116,6 +116,11 @@ main{
   background-color: #c9c9c966;
 }
 
+[data-paginacao] button.on{
+  background-color: #6655DD;
+  color: #fff;
+}
+
 .paginacao p{
   padding: 8px 12px;
   cursor: pointer;

@@ -20,10 +20,10 @@ export default class vendasFecth {
   }
 
   botarNaTela(dados) {
-    const divDados = document.createElement('div');
-    divDados.classList.add('div-transacao');
     dados.forEach((item) => {
+      const divDados = document.createElement('div');
       const formatar = new formatarMoeda(item.produto.preco);
+      divDados.classList.add('div-transacao');
       formatar.init();
       divDados.innerHTML = `
       <div class="div-imagem-compra">

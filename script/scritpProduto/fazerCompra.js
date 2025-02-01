@@ -12,7 +12,9 @@ export default class fazerCompra {
         )}`,
       );
       const dados = await response.json();
-
+      if (!!dados.id) {
+        window.location.href = '/code/html/compras.html';
+      }
       const [cep, rua, estado, cidade, bairro, numero] = this.endereco;
       const enderecoObj = {
         cep: cep.value,

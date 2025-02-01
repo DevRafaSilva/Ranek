@@ -22,9 +22,9 @@ export default class pegerTransacao {
 
   botarNaTela(dados) {
     console.log(dados);
-    const divDados = document.createElement('div');
-    divDados.classList.add('div-transacao');
     dados.forEach((item) => {
+      const divDados = document.createElement('div');
+      divDados.classList.add('div-transacao');
       const formatar = new formatarMoeda(item.produto.preco);
       formatar.init();
       console.log(formatar);

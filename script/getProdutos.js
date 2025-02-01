@@ -1,11 +1,12 @@
 import formatarMoeda from './formatarMoeda.js';
 import pesquisarFecth from './pesquisaFetch.js';
 export default class getProdutos {
-  constructor(dataProdutoHTML, dataPaginacao, anterior, proximo) {
+  constructor(dataProdutoHTML, dataPaginacao, anterior, proximo, loading) {
     this.dataProdutoHTML = document.querySelector(dataProdutoHTML);
     this.dataPaginacao = document.querySelector(dataPaginacao);
     this.anterior = document.querySelector(anterior);
     this.proximo = document.querySelector(proximo);
+    this.loading = document.querySelector(loading);
     this.dados = [];
     this.indexBtnClicado = 1;
     this.limiteItens = 0;
@@ -16,6 +17,7 @@ export default class getProdutos {
     const pesquisa = new pesquisarFecth('[data-input-pesquisa]');
     pesquisa.init();
     try {
+      this.loading.style.display = 'block';
       const response = await fetch(
         'https://ranekapi.origamid.dev/json/api/produto',
       );
@@ -28,11 +30,13 @@ export default class getProdutos {
         this.paginacao(this.dados);
       } else {
         this.dados = await response.json();
+        this.setarProdutosNoHtml(this.dados);
         this.paginacao(this.dados);
       }
     } catch (err) {
       console.log(err);
     } finally {
+      this.loading.style.display = 'none';
     }
   }
 
@@ -102,6 +106,7 @@ export default class getProdutos {
     let arrayResultado = dados.slice(contador, limitador);
 
     this.setarProdutosNoHtml(arrayResultado);
+    this.pegarIdProduto(arrayResultado);
   }
 
   setarProdutosNoHtml(dados) {
@@ -126,14 +131,15 @@ export default class getProdutos {
       `;
       this.dataProdutoHTML.appendChild(criarDiv);
     });
-    this.pegarIdProduto();
   }
 
-  pegarIdProduto() {
+  pegarIdProduto(dados) {
     let produtoDiv = document.querySelectorAll('.produto-div');
     produtoDiv.forEach((itemDiv, index) => {
       itemDiv.addEventListener('click', () => {
-        window.localStorage.setItem('id', this.dados[index].id);
+        console.log(dados[index].nome);
+        console.log(index);
+        window.localStorage.setItem('id', dados[index].id);
       });
     });
   }

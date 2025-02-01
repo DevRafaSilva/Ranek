@@ -4,5 +4,6 @@ const getProdutosVar = new getProdutos(
   '[data-paginacao]',
   '[data-ant]',
   '[data-prox]',
+  '[data-loading]',
 );
 getProdutosVar.init();

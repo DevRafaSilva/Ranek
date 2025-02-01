@@ -129,3 +129,41 @@ main{
   background-color: #6655DD;
   border-radius: 8px;
 }
+
+.loading-div{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+}
+
+.loading{
+  background-color: #6655DD;
+  padding: 6px;
+  height: 8px;
+  width: 8px;
+  display: inline-block;
+  border-radius: 50px;
+  animation: infinite 1s Loading ease-in;
+}
+
+.loading-1{
+  animation: infinite 1s Loading .8s ease-in-out  ;
+}
+.loading-2{
+  animation: infinite 1s Loading .3s ease-in-out  ;
+}
+.loading-3{
+  animation: infinite 1s Loading .1s ease-in-out  ;
+}
+
+@keyframes Loading {
+  0%{
+    transform: translateY(0);
+  }50%{
+    transform: translateY(20px);
+  }
+  100%{
+    transform: translateY(0px);
+
+  }
+}

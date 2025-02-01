@@ -9,9 +9,7 @@ export default class nomeUsuario {
       window.localStorage.getItem('token') != null
     ) {
       this.dataLink.innerText = window.localStorage.getItem('nome');
-      console.log('olá');
     } else {
-      console.log('oi');
       this.dataLink.innerText = 'Vender / Login';
     }
   }

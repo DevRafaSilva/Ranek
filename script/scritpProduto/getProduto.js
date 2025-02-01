@@ -2,6 +2,7 @@ import formatarMoeda from '../formatarMoeda.js';
 import formularioAbrir from './abrirFormulario.js';
 import pegarDadosCompra from './pegarDadosCompra.js';
 import fazerCompra from './fazerCompra.js';
+import inputValor from './inputValor.js';
 
 export default class getProduto {
   constructor(dataProdutoItem) {
@@ -18,7 +19,7 @@ export default class getProduto {
         )}`,
       );
       const dados = await response.json();
-        this.dadosItem = dados;
+      this.dadosItem = dados;
       this.colocarNaTelaProduto();
     } catch (err) {
       console.log(err);
@@ -27,14 +28,13 @@ export default class getProduto {
   }
 
   colocarNaTelaProduto() {
-
     let moedaFormatada = new formatarMoeda(this.dadosItem.preco);
     moedaFormatada.init();
 
     this.dadosItem.fotos?.forEach((img) => {
       const criarDiv = document.createElement('div');
       criarDiv.classList.add('grid-produto');
-  
+
       criarDiv.innerHTML = ` 
       <div>
         <img src="${img.src}" title="${img.title}" />
@@ -46,7 +46,7 @@ export default class getProduto {
     const criarDivConteudo = document.createElement('div');
     criarDivConteudo.classList.add('conteudo-produto');
     criarDivConteudo.innerHTML = `
-    <div class="div-item produto-item">
+    <div onload="" class="div-item produto-item">
     <div class="container-produto">
     <p class="preco-item">${moedaFormatada.formatar()}</p>
     <h2 class="titulo-item">${this.dadosItem.nome}</h2>
@@ -101,12 +101,25 @@ export default class getProduto {
     let formularioContainer =
       criarDivConteudo.querySelector('[data-formulario]');
 
+    const intervalo = setInterval(() => {
+      const valorInput = new inputValor(
+        criarDivConteudo.querySelectorAll('input'),
+        criarDivConteudo.querySelectorAll('label'),
+      );
+      valorInput.init();
+      clearInterval(intervalo);
+    }, 2000);
+
     let form = new formularioAbrir(btnFormulario, formularioContainer);
     form.init();
     this.dataProdutoItem.appendChild(criarDivConteudo);
     const pegarDados = new pegarDadosCompra(
       '.conteudo-produto [data-dados-compra]',
     );
+
+    const inputValue = criarDivConteudo.querySelector('input');
+    const inputValorPegar = new inputValor(inputValue);
+    inputValorPegar.init();
     pegarDados.init();
     const comprar = new fazerCompra(
       '.conteudo-produto [data-comprar-btn]',

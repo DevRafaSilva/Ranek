@@ -5,8 +5,6 @@ export default class inputValor {
   }
 
   pegarValorInput() {
-    console.log(this.input);
-
     if (this.input.length >= 9 && this.input.length >= 9) {
       const arrayInput = Array.from(this.input);
       const arrayLabel = Array.from(this.label);

@@ -7,6 +7,7 @@
   border: none;
 }
 
+
 .formulario-login label{
   margin:20px 0px 5px 0;
   color: #334455;
@@ -143,4 +144,8 @@
   font-size: 18px;
   text-align: center;
   margin: 20px 0 20px 0;
+}
+
+.login-main{
+  height: 150vh;
 }

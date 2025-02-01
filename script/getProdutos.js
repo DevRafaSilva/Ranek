@@ -41,7 +41,6 @@ export default class getProdutos {
   }
 
   paginacao(dados) {
-    console.log(dados);
     this.dataPaginacao.innerHTML = '';
     this.limiteItens = 3;
     const totalPaginas = Math.ceil(dados.length / this.limiteItens);
@@ -137,8 +136,7 @@ export default class getProdutos {
     let produtoDiv = document.querySelectorAll('.produto-div');
     produtoDiv.forEach((itemDiv, index) => {
       itemDiv.addEventListener('click', () => {
-        console.log(dados[index].nome);
-        console.log(index);
+      
         window.localStorage.setItem('id', dados[index].id);
       });
     });

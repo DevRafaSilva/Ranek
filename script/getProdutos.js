@@ -19,11 +19,17 @@ export default class getProdutos {
       const response = await fetch(
         'https://ranekapi.origamid.dev/json/api/produto',
       );
-      const dados = await response.json();
-      this.dados = dados;
-
-      this.dados = await pesquisa.pesquisar();
-      this.paginacao(this.dados);
+      const inputValorPesquisa = document.querySelector(
+        '[data-input-pesquisa]',
+      );
+      if (inputValorPesquisa.value !== '') {
+        this.dados = await pesquisa.pesquisar();
+        this.setarProdutosNoHtml(this.dados);
+        this.paginacao(this.dados);
+      } else {
+        this.dados = await response.json();
+        this.paginacao(this.dados);
+      }
     } catch (err) {
       console.log(err);
     } finally {
@@ -31,6 +37,7 @@ export default class getProdutos {
   }
 
   paginacao(dados) {
+    console.log(dados);
     this.dataPaginacao.innerHTML = '';
     this.limiteItens = 3;
     const totalPaginas = Math.ceil(dados.length / this.limiteItens);
@@ -98,7 +105,6 @@ export default class getProdutos {
   }
 
   setarProdutosNoHtml(dados) {
-
     this.dataProdutoHTML.innerHTML = '';
     dados.forEach((produtos) => {
       let moedaFormatada = new formatarMoeda(produtos.preco);

@@ -27,7 +27,6 @@ export default class pegerTransacao {
       divDados.classList.add('div-transacao');
       const formatar = new formatarMoeda(item.produto.preco);
       formatar.init();
-      console.log(formatar);
       divDados.innerHTML = `
       <div class="div-imagem-compra">
         <img src="${item.produto.fotos[0].src}" titl="imagem" />

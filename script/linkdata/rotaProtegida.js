@@ -9,7 +9,6 @@ export default class rotaProtegida {
       window.location.href = '/code/html/login.html';
     } else if (verificar && window.location.pathname.includes('/login')) {
       window.location.href = '/code/html/conta.html';
-
     }
   }
 

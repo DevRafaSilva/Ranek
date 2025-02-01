@@ -1,11 +1,18 @@
 export default class nomeUsuario {
   constructor(dataLink) {
-    this.dataLink = document.querySelectorAll(dataLink);
+    this.dataLink = document.querySelector(dataLink);
   }
 
   pegarNomeUsuario() {
-    if (window.localStorage.getItem('token') !== 'undefined') {
-      this.dataLink[0].innerText = window.localStorage.getItem('nome');
+    if (
+      window.localStorage.getItem('token') !== 'undefined' &&
+      window.localStorage.getItem('token') != null
+    ) {
+      this.dataLink.innerText = window.localStorage.getItem('nome');
+      console.log('olá');
+    } else {
+      console.log('oi');
+      this.dataLink.innerText = 'Vender / Login';
     }
   }
 

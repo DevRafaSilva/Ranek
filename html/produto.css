@@ -1,0 +1,106 @@
+.produto{
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 30px 25px;
+}
+
+.produto img{
+  border-radius: 8px;
+  margin-bottom: 15px;
+}
+
+.produto{
+  display: grid;
+  gap: 30px;
+  grid-template-rows: 800px 800px;
+  grid-template-columns: 500px 1fr;
+}
+
+
+.conteudo-produto{
+  grid-column: 2;
+  grid-row: 1;
+}
+
+.preco-item{
+  font-size: 25px !important;
+}
+@media(max-width:800px){
+  .produto{
+    grid-template-rows: auto;
+    grid-template-columns: auto;
+  }
+  .conteudo-produto{
+    grid-column: 1;
+  }
+  .container-produto{
+    position: initial !important;
+  }
+}
+.produto-item {
+  position: relative;
+  height: calc(100% + 100%);
+}
+
+.container-produto{
+  position: sticky;
+  top: 30px;
+}
+
+
+.descricao-item{
+  width: 35ch;
+  font-size: 20px;
+}
+@media(max-width:900px){
+  .descricao-item{
+    width: auto;
+  }
+}
+
+.produto-item a {
+  padding: 10px 50px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.formulario{
+  top: 230px;
+  margin-top: 50px;
+}
+
+.formulario div{
+  padding: 20px 0px 0 0;
+  display: grid;
+  grid-template-columns: 60px auto;
+  align-items: center;
+  max-width: 800px;
+}
+
+.formulario div input{
+  padding: 12px 0 12px 20px;
+  border: none;
+  max-width: 100%;
+  display: inline-block;
+  margin: 10px 0;
+  border-radius: 4px;
+  box-shadow: 1px 1px 8px 1px #ccc;
+}
+
+.formulario{
+  display: none;
+}
+
+.formulario.open{
+  display: block;
+}
+
+.conteudo-produto .div-btn-compra button{
+ background-color: #EE8800 !important;
+ grid-column: 2 !important;
+ padding: 10px 18px;
+ font-size: 18px;
+ border-radius: 6px;
+ place-self: start;
+ color: #f5f5f7;
+}

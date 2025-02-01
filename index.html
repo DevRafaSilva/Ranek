@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../code/css/style.css">
+  <meta name="description" content="Compre e venda produtos">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ranek</title>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="container">
+      <ul>
+        <li>
+          <a class="img-link" href="./index.html">
+            <img src="/img/ranek.svg" alt="Logotipo ranek">
+          </a>
+        <li><a data-link class="btn-principal" href="">Vender / login</a></li>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class="container">
+    <h1 class="titulo">👍 Compre ou Venda 👎</h1>
+    <div class="input-container">
+      <input data-input-pesquisa placeholder="Buscar..." type="text" id="buscar" name="buscar">
+      <img src="../img/search.svg" alt="pesquisa icone">
+    </div>
+    <div class="produtos container" data-produtos>
+
+    </div>
+    <div class="paginacao">
+
+      <p data-ant>Ant</p>
+      <div data-paginacao></div>
+      <p data-prox>Próx</p>
+    </div>
+  </main>
+  <script type="module" src="../code/script/nomeUsuario/script.js"></script>
+  <script type="module" src="./script/script.js"></script>
+  <script type="module" src="../code/script/linkdata/script.js"></script>
+</body>
+
+</html>

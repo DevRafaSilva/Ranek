@@ -1,0 +1,136 @@
+.nav-conta li a{
+  color: #333;
+  margin-top: 20px;
+  display: block;
+  background-color: #f4f7f7;
+  padding: 13px 26px;
+  width: 100%;
+  font-size: 18px;
+  border-radius: 8px;
+}
+.nav-conta{
+  padding: 30px 32px 0 0;
+}
+
+.nav-conta li a:hover{
+  background-color: #8877FF;
+  color: #f4f7f7;
+}
+.nav-conta li a.on{
+  background-color: #8877FF;
+  color: #f4f7f7;
+}
+
+.formulario-postar{
+  padding: 40px 30px 0 0;
+  color: #334455;
+}
+.formulario-postar textarea{
+  display: block;
+}
+
+.container-conta{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  align-items: start;
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: 32px;
+  gap: 60px;
+}
+
+@media(max-width:580px){
+  .container-conta{
+    grid-template-columns: 1fr;
+  }
+}
+
+.formulario-postar form{
+  margin-top: 20px;
+  padding-right: 30px;
+}
+
+.formulario-postar form{
+  max-width: 700px;
+  margin-right: auto;
+}
+
+.formulario-postar form textarea{
+  width: 100%;
+  padding: 10px 10px;
+  border: none;
+}
+
+.produtos-usuario h2{
+  color: #334455;
+  margin-top: 40px;
+}
+
+.grid-form{
+  display: grid;
+  grid-template-columns: 80px auto;
+  align-items: center;
+}
+
+.grid-form a{
+  grid-column: 2;
+  margin-top: 20px;
+  place-self: start;
+}
+
+.btn-post{
+  display: block;
+  width: 100%;
+  text-align: center;
+  margin-top: 40px;
+}
+
+.div-imagem-compra {
+  object-fit: contain;
+  width: 250px;
+  object-position: center;
+  height: 130px !important;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.div-imagem-compra img{
+  max-width: 100%;
+  width: 250px;
+}
+
+.div-transacao{
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  margin-top: 40px;
+}
+
+@media(max-width:600px){
+  .div-transacao{
+    grid-template-columns: auto;
+  }
+}
+
+.conteudo-transacao{
+  place-content: end;
+}
+
+.conteudo-transacao p{
+  margin-bottom: 10px;
+}
+
+.p-vendedor{
+  color: #ee8800;
+  font-size: 18px;
+  font-weight: 400px;
+}
+
+.grid-endereco{
+  place-items: end;
+  margin-top: 10px;
+}
+
+.dados-endereco p{
+  margin-top: 10px;
+}

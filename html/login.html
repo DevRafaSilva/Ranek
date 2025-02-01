@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/code/css/style.css">
+  <meta name="viewport-criar" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="container">
+      <ul>
+        <li>
+          <a class="img-link" href="../index.html">
+            <img src="/img/ranek.svg" alt="Logotipo ranek">
+          </a>
+        <li><a class="btn-principal" href="">Vender / login</a></li>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <h1 class="titulo">Login</h1>
+    <form class="formulario-login" action="POST">
+      <label for="email-criar">Email</label>
+      <input data-email-login type="text" name="email-criar" id="email-criar">
+      <label for="senha-criar">Senha</label>
+      <input data-senha-login type="password" name="senha-criar" id="senha-criar">
+      <button data-btn-login class="btn-principal">Logar</button>
+      <span data-erro-login class="error-span"></span>
+      <a href="#">Perdeu a senha? clique aqui</a>
+    </form>
+    <div class="criar-conta">
+      <h1>Crie sua conta</h1>
+      <button data-btn-formulario-criar class="btn-principal">Criar conta</button>
+      <form data-formulario-criar class="formulario-criar" action="POST">
+        <div class="div-container-form">
+          <label for="nome-criar">Nome</label>
+          <input data-nome id="nome-cria" name="nome-criar" type="text" />
+          <label for="email-criar">Email</label>
+          <input data-email id="email-cria" name="email-criar" type="email" />
+          <label for="senha-criar">Senha</label>
+          <input data-senha id="senha-cria" name="senha-criar" type="password" />
+          <label for="cep-criar">Cep</label>
+          <input data-cep id="cep-criar" name="cep-criar" type="number" />
+          <label for="rua-criar">Rua</label>
+          <input data-dados data-rua id="rua-criar" name="rua-criar" type="text" />
+          <label for="numero-criar">Número</label>
+          <input data-numero id="numero-criar" name="numero-criar" type="number" />
+          <label for="bairro-criar">Bairro</label>
+          <input data-dados data-bairro id="bairro-criar" name="bairro-criar" type="text" />
+          <label for="cidade-criar">Cidade</label>
+          <input data-dados data-cidade id="cidade-criar" name="cidade-criar" type="text" />
+          <label for="estado-criar">Estado</label>
+          <input data-dados data-estado id="estado-criar" name="estado-criar" type="text" />
+          <span data-error class="erro"></span>
+          <button data-btn-criar class="grid-btn">Criar usuário</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script type="module" src="../script/conta/script.js"></script>
+  <script type="module" src="../script/scriptCriarLogin/script.js"></script>
+  <script type="module" src="../script/linkdata/script.js"></script>
+</body>
+
+</html>

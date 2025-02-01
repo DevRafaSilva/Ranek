@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="../css/style.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conta</title>
+</head>
+
+<body>
+  <header class="header">
+    <nav class="container">
+      <ul>
+        <li>
+          <a class="img-link" href="../index.html">
+            <img src="/img/ranek.svg" alt="Logotipo ranek">
+          </a>
+        <li><a data-link class="btn-principal" href="">Vender / login</a></li>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main class=" container-conta">
+    <ul class="">
+      <nav class="nav-conta">
+        <li><a class="on" href="./conta.html">Produtos</a></li>
+        <li><a href="./compras.html">Compras</a></li>
+        <li><a href="./vendas.html">Vendas</a></li>
+        <li><a href="./editarUsuario.html">Editar Usuário</a></li>
+        <li><a data-logout href="#">Deslogar</a></li>
+      </nav>
+    </ul>
+    <div class="formulario-postar container">
+      <h1>Adicionar Produto</h1>
+      <form class="div-container-form" method="POST">
+        <label for="nome-produto">Nome</label>
+        <input required data-post-nome type="text" name="nome-produto" id="nome-produto">
+        <label for="preco-produto">preço</label>
+        <input required data-post-preco type="number" name="preco-produto" id="preco-produto">
+        <label for="fotos-produto">Fotos</label>
+        <input required data-post-file type="file" name="fotos-produto" id="fotos-produto">
+        <label for="descricao-produto">Descrição</label>
+        <textarea required data-post-descricao name="descricao-produto" id="descricao-produto" cols="30" rows="10"></textarea>
+        <button type="submit" data-post-btn class="btn-principal btn-post">POSTAR</button>
+      </form>
+      <div class="produtos-usuario">
+        <h2 class="">Seus produtos</h2>
+        <div data-produtos-usuario>
+
+        </div>
+      </div>
+    </div>
+  </main>
+  <script type="module" src="../script/nomeUsuario/script.js"></script>
+  <script type="module" src="../script/conta/script.js"></script>
+  <script type="module" src="../script/linkdata/script.js"></script>
+</body>
+
+</html>
